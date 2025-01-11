@@ -15,11 +15,11 @@ export function FriendshipStats({ stats }: FriendshipStatsProps) {
     <div className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-2xl font-bold mb-6">Friendship Statistics</h2>
       
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="flex items-center space-x-3">
           <MessageCircle className="w-6 h-6 text-blue-500" />
           <div>
-            <p className="text-2xl font-bold">{stats.totalMessages}</p>
+            <p className="text-2xl font-bold">{stats.totalMessages.toLocaleString()}</p>
             <p className="text-sm text-gray-600">Messages</p>
           </div>
         </div>
@@ -27,7 +27,7 @@ export function FriendshipStats({ stats }: FriendshipStatsProps) {
         <div className="flex items-center space-x-3">
           <Image className="w-6 h-6 text-blue-500" />
           <div>
-            <p className="text-2xl font-bold">{stats.totalPhotos}</p>
+            <p className="text-2xl font-bold">{stats.totalPhotos.toLocaleString()}</p>
             <p className="text-sm text-gray-600">Photos</p>
           </div>
         </div>
@@ -35,7 +35,7 @@ export function FriendshipStats({ stats }: FriendshipStatsProps) {
         <div className="flex items-center space-x-3">
           <Mic className="w-6 h-6 text-blue-500" />
           <div>
-            <p className="text-2xl font-bold">{stats.totalVoiceMessages}</p>
+            <p className="text-2xl font-bold">{stats.totalVoiceMessages.toLocaleString()}</p>
             <p className="text-sm text-gray-600">Voice Messages</p>
           </div>
         </div>
@@ -64,6 +64,12 @@ export function FriendshipStats({ stats }: FriendshipStatsProps) {
             </span>
           ))}
         </div>
+      </div>
+
+      <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+        <p className="text-sm text-blue-600">
+          {duration} days of friendship and counting!
+        </p>
       </div>
     </div>
   );
