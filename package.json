@@ -2,13 +2,13 @@
   "name": "telegram-friendship-history",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start-bot": "node src/bot.ts"
+    "start-bot": "node src/bot.js"
   },
   "dependencies": {
     "@twa-dev/sdk": "^6.9.1",
